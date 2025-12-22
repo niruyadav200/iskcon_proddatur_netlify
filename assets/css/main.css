@@ -314,24 +314,49 @@ h6 {
 }
 
 .header .header-social-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
   padding-right: 15px;
 }
 
 .header .header-social-links a {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
-  padding-left: 6px;
-  display: inline-block;
-  transition: 0.3s;
-  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  font-size: 18px;
+  padding: 0;
+  margin-left: 0;
+  box-shadow: none;
 }
 
-.header .header-social-links a:hover {
-  color: var(--accent-color);
+.header .header-social-links a:hover,
+.header .header-social-links a:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  color: #fff;
+  outline: none;
+}
+
+.header .header-social-links a:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), white 70%);
 }
 
 .header .header-social-links a i {
-  line-height: 0px;
+  line-height: 1;
 }
+
+/* Per-channel hover colors */
+.header .social-instagram:hover { background: #E1306C; color: #fff; border-color: #E1306C; }
+.header .social-youtube:hover { background: #FF0000; color: #fff; border-color: #FF0000; }
+.header .social-whatsapp:hover { background: #25D366; color: #fff; border-color: #25D366; }
 
 @media (max-width: 1200px) {
   .header .logo {
